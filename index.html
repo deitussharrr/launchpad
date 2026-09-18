@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ✏️  CHANGE: Update this to your name -->
+  <title>Your Name — Portfolio</title>
+
+  <!-- Tailwind CSS (CDN — fine for GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Instrument Serif (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif:  ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans:   ['"DM Sans"', 'sans-serif'],
+          },
+          colors: {
+            /* ✏️  CHANGE: swap these hex values to restyle the whole site */
+            ink:    '#0e0e0e',
+            paper:  '#f5f2eb',
+            muted:  '#7a7870',
+            accent: '#c84b2f',   /* the one pop of colour */
+            card:   '#edeae2',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease both',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%':   { opacity: '0', transform: 'translateY(18px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased">
+
+  <!-- ===================== NAV ===================== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-paper/80 backdrop-blur-sm border-b border-ink/10">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+
+      <!-- ✏️  CHANGE: Replace with your initials or a short name -->
+      <span class="font-serif text-lg tracking-tight">TSH</span>
+
+      <nav class="flex gap-7 text-sm text-muted font-medium">
+        <a href="#about"    class="nav-link hover:text-ink transition-colors">About</a>
+        <a href="#projects" class="nav-link hover:text-ink transition-colors">Projects</a>
+        <a href="#contact"  class="nav-link hover:text-ink transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center px-6 pt-20 pb-16 max-w-5xl mx-auto">
+
+    <!-- Decorative rule -->
+    <div class="animate-fade-up delay-1 w-10 h-px bg-accent mb-10"></div>
+
+    <!-- ✏️  CHANGE: Your name on the big headline -->
+    <h1 class="animate-fade-up delay-2 font-serif text-[clamp(3rem,10vw,7rem)] leading-[0.95] tracking-tight mb-8">
+      Your<br/>
+      <em class="not-italic text-muted">Tusshar</em><span class="text-accent">.</span>
+    </h1>
+
+    <!-- ✏️  CHANGE: One-line role / tagline -->
+    <p class="animate-fade-up delay-3 text-lg md:text-xl text-muted font-light max-w-xl leading-relaxed mb-10">
+      CS undergrad at <strong class="font-medium text-ink">Your College</strong> — building things
+      for the web, one commit at a time.
+    </p>
+
+    <!-- CTA buttons -->
+    <div class="animate-fade-up delay-4 flex flex-wrap gap-4">
+      <a href="#projects"
+         class="px-6 py-3 bg-ink text-paper text-sm font-medium rounded-full hover:bg-accent transition-colors duration-200">
+        See my work
+      </a>
+      <!-- ✏️  CHANGE: Link to your actual resume PDF -->
+      <a href="resume.pdf" target="_blank"
+         class="px-6 py-3 border border-ink/30 text-sm font-medium rounded-full hover:border-accent hover:text-accent transition-colors duration-200">
+        Download resume ↗
+      </a>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="animate-fade-up delay-5 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted text-xs tracking-widest uppercase">
+      <span>Scroll</span>
+      <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 1v14M1 13l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="reveal py-24 px-6 max-w-5xl mx-auto">
+
+    <div class="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
+
+      <!-- Left: label + photo placeholder -->
+      <div>
+        <p class="text-xs font-medium tracking-[0.2em] uppercase text-muted mb-6">About me</p>
+
+        <!-- ✏️  CHANGE: Replace src with a real photo, e.g. src="photo.jpg" -->
+        <div class="aspect-[3/4] bg-card rounded-2xl overflow-hidden flex items-end justify-center">
+          <div class="text-center pb-8 text-muted">
+            <svg class="mx-auto mb-2 opacity-40" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span class="text-xs"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: bio text -->
+      <div class="pt-10">
+        <!-- ✏️  CHANGE: Write your actual bio below -->
+        <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-8">
+          I build clean,<br/><em>useful</em> software.
+        </h2>
+
+        <div class="space-y-4 text-base text-muted leading-relaxed max-w-lg">
+          <p>
+            Hi! I'm a <strong class="text-ink font-medium">third-year Computer Science student</strong>
+            at [Your College]. I'm interested in full-stack web development, open source, and
+            making technology more accessible.
+          </p>
+          <p>
+            When I'm not coding, I'm probably [your hobby — reading, playing chess, hiking, etc.].
+            I'm currently looking for <strong class="text-ink font-medium">internship opportunities
+            for summer 2026</strong>.
+          </p>
+        </div>
+
+        <!-- Skills chips -->
+        <!-- ✏️  CHANGE: Add / remove your actual skills -->
+        <div class="flex flex-wrap gap-2 mt-8">
+          {["Python", "JavaScript", "React", "Node.js", "SQL", "Git"].map(skill =>
+            `<span class="px-3 py-1 bg-card text-ink text-sm rounded-full border border-ink/10">${skill}</span>`
+          ).join('')}
+        </div>
+        <div id="skills-chips" class="flex flex-wrap gap-2 mt-8"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="reveal py-24 px-6 bg-ink text-paper">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="flex items-baseline justify-between mb-14">
+        <div>
+          <p class="text-xs font-medium tracking-[0.2em] uppercase text-paper/40 mb-3">Work</p>
+          <h2 class="font-serif text-4xl md:text-5xl">Projects</h2>
+        </div>
+        <!-- ✏️  CHANGE: Link to your GitHub profile -->
+        <a href="https://github.com/yourusername" target="_blank"
+           class="text-sm text-paper/50 hover:text-accent transition-colors hidden sm:block">
+          github.com/yourusername ↗
+        </a>
+      </div>
+
+      <!-- Project grid — duplicate a card to add more projects -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- ✏️  PROJECT 1: Change title, description, tags, and link -->
+        <div class="project-card bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
+          <!-- Project icon / color band -->
+          <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c84b2f" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="font-medium text-lg mb-2">Project One</h3>
+          <p class="text-paper/50 text-sm leading-relaxed flex-1 mb-5">
+            A short, punchy description of what this project does and why you built it. Keep it to 2 sentences.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">React</span>
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">Node.js</span>
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">MongoDB</span>
+          </div>
+          <div class="flex gap-4 text-sm">
+            <a href="#" class="text-accent hover:underline">Live ↗</a>
+            <a href="#" class="text-paper/40 hover:text-paper transition-colors">GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- ✏️  PROJECT 2 -->
+        <div class="project-card bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-yellow-400/20 flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="font-medium text-lg mb-2">Project Two</h3>
+          <p class="text-paper/50 text-sm leading-relaxed flex-1 mb-5">
+            Another thing you built. What problem did it solve? Who uses it? Make it sound interesting.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">Python</span>
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">FastAPI</span>
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">PostgreSQL</span>
+          </div>
+          <div class="flex gap-4 text-sm">
+            <a href="#" class="text-accent hover:underline">Live ↗</a>
+            <a href="#" class="text-paper/40 hover:text-paper transition-colors">GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- ✏️  PROJECT 3 -->
+        <div class="project-card bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-teal-400/20 flex items-center justify-center mb-5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <h3 class="font-medium text-lg mb-2">Project Three</h3>
+          <p class="text-paper/50 text-sm leading-relaxed flex-1 mb-5">
+            Your third project. This could be a CLI tool, a mobile app, a game, a browser extension — anything you're proud of.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">TypeScript</span>
+            <span class="px-2 py-0.5 text-xs bg-white/10 text-paper/60 rounded-full">Tailwind</span>
+          </div>
+          <div class="flex gap-4 text-sm">
+            <a href="#" class="text-accent hover:underline">Live ↗</a>
+            <a href="#" class="text-paper/40 hover:text-paper transition-colors">GitHub ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="reveal py-24 px-6 max-w-5xl mx-auto text-center">
+
+    <p class="text-xs font-medium tracking-[0.2em] uppercase text-muted mb-4">Get in touch</p>
+
+    <!-- ✏️  CHANGE: Your actual email address in both the href and the visible text -->
+    <a href="mailto:you@example.com"
+       class="group inline-block font-serif text-[clamp(2rem,7vw,5rem)] leading-tight tracking-tight hover:text-accent transition-colors duration-300 mb-12">
+      you@example.com
+    </a>
+
+    <p class="text-muted text-base max-w-sm mx-auto leading-relaxed mb-10">
+      Open to internships, collaborations, and interesting conversations.
+      My inbox is always open.
+    </p>
+
+    <!-- Social links -->
+    <!-- ✏️  CHANGE: Replace # with your actual profile URLs -->
+    <div class="flex justify-center gap-6 text-sm text-muted">
+      <a href="https://github.com/yourusername"  target="_blank" class="hover:text-accent transition-colors">GitHub ↗</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:text-accent transition-colors">LinkedIn ↗</a>
+      <a href="https://twitter.com/yourhandle"   target="_blank" class="hover:text-accent transition-colors">Twitter ↗</a>
+    </div>
+  </section>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="border-t border-ink/10 py-8 px-6 text-center text-xs text-muted">
+    <!-- ✏️  CHANGE: Your name -->
+    <p>Built by <strong class="text-ink font-medium">Your Name</strong> at the Build a Landing Page workshop · Hosted on GitHub Pages</p>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+</html>
